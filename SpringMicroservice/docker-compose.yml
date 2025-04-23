@@ -1,0 +1,27 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: 150919
+      MYSQL_DATABASE: studentDb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  postgres:
+    image: postgres:15
+    container_name: postgres-container
+    environment:
+      POSTGRES_USER: postgre
+      POSTGRES_PASSWORD: 150919
+      POSTGRES_DB: coursesDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  mysql-data:
+  postgres-data:

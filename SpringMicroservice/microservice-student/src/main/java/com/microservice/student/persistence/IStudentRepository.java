@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface IStudentRepository extends JpaRepository<Student, Long> {
 
-    @Query("SELECT s FROM Student WHERE s.courseId = :idCourse")
+    @Query("SELECT s FROM Student s WHERE s.courseId = :idCourse")
     List<Student> findAllByCourseId(Long idCourse);
 
 }
